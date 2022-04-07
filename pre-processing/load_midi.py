@@ -358,7 +358,7 @@ class Note_Event(object):
 			'ON' if self.note_on else 'OFF', self.pitch, '_' + str(self.velocity) if self.note_on else '')
 
 
-def merge_lyrics_with_vocal_events(lyrics, text_events, phonemodel='cmudict-20170708.o8.fst'):
+def merge_lyrics_with_vocal_events(lyrics, text_events, phonemodel='/home/jupyter/cmudict-20170708.o8.fst'):
 	phonemodel = Phonetisaurus(phonemodel)
 	phonemes_list, syllables_list = zip(*[get_phonemes(l, phonemodel) for l in lyrics.strip('<|endoftext|>').split()])
 	lyrics_events = []
